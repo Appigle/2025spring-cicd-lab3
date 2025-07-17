@@ -30,12 +30,6 @@ Resources:
           - ServerSideEncryptionByDefault:
               SSEAlgorithm: AES256
     DeletionPolicy: Delete
-  S3BucketObject:
-    Type: AWS::S3::BucketObject
-    Properties:
-      Bucket: !Ref S3Bucket
-      Key: 'requirements.md'
-      Body: !Sub '${file("requirements.md")}'
 
 Outputs:
   BucketName:
